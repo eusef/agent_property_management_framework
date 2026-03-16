@@ -1,0 +1,30 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}Setup Complete! - Property Management{% endblock %}
+
+{% block wizard_content %}
+<div class="success-card">
+    <div class="success-icon">&#x2705;</div>
+    <h1 class="wizard-title">Setup Complete!</h1>
+    <p class="wizard-subtitle">
+        Your property management system is ready to use.
+        {% if config.properties %}
+        {{ config.properties|length }} propert{{ 'y' if config.properties|length == 1 else 'ies' }} configured.
+        {% endif %}
+    </p>
+
+    <div class="success-next-steps">
+        <h3>Next Steps</h3>
+        <ol>
+            <li><strong>Explore the dashboard</strong> -- See your properties, tasks, and recent files</li>
+            <li><strong>Fill in property details</strong> -- Each property has a README.md with fields to complete</li>
+            <li><strong>Start your AI assistant</strong> -- Point it at AGENT_CONTEXT.md to get started</li>
+            <li><strong>Update settings anytime</strong> -- Click the gear icon in the header</li>
+        </ol>
+    </div>
+
+    <div style="margin-top: 24px;">
+        <a href="/" class="btn btn-primary" style="padding: 8px 32px;">Go to Dashboard</a>
+    </div>
+</div>
+{% endblock %}

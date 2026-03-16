@@ -1,0 +1,44 @@
+<div class="widget-header">
+    <h2>TASKS.md &amp; DASHBOARD.md</h2>
+    <a href="#" class="btn btn-sm" hx-get="/api/widget/pinned-files"
+       hx-target="#widget-pinned-files" hx-swap="innerHTML">Refresh</a>
+</div>
+<div class="widget-body pinned-files-body">
+    <details open class="pinned-section">
+        <summary class="pinned-summary">
+            TASKS.md
+            {% if tasks_data.exists %}
+            <a href="/file/{{ tasks_data.file_path }}" class="pinned-link btn btn-sm"
+               hx-get="/file/{{ tasks_data.file_path }}"
+               hx-target="#main" hx-push-url="true"
+               onclick="event.stopPropagation()">Open</a>
+            {% endif %}
+        </summary>
+        <div class="pinned-content markdown-body">
+            {% if tasks_data.exists %}
+                {{ tasks_data.content_html|safe }}
+            {% else %}
+                <p class="text-muted">TASKS.md not found.</p>
+            {% endif %}
+        </div>
+    </details>
+
+    <details class="pinned-section">
+        <summary class="pinned-summary">
+            DASHBOARD.md
+            {% if dashboard_data.exists %}
+            <a href="/file/{{ dashboard_data.file_path }}" class="pinned-link btn btn-sm"
+               hx-get="/file/{{ dashboard_data.file_path }}"
+               hx-target="#main" hx-push-url="true"
+               onclick="event.stopPropagation()">Open</a>
+            {% endif %}
+        </summary>
+        <div class="pinned-content markdown-body">
+            {% if dashboard_data.exists %}
+                {{ dashboard_data.content_html|safe }}
+            {% else %}
+                <p class="text-muted">DASHBOARD.md not found.</p>
+            {% endif %}
+        </div>
+    </details>
+</div>

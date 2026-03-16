@@ -1,0 +1,12 @@
+<div class="file-view">
+    <div class="file-header">
+        <span class="file-path">{{ file_path }}</span>
+        <a href="/edit/{{ file_path }}" class="btn btn-primary btn-sm"
+           hx-get="/edit/{{ file_path }}"
+           hx-target="#main"
+           hx-push-url="true">Edit</a>
+    </div>
+    <div class="file-content markdown-body">
+        {{ rendered_content | safe }}
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}AI Assistant - Setup{% endblock %}
+
+{% block wizard_content %}
+<h1 class="wizard-title">AI Assistant</h1>
+<p class="wizard-subtitle">Which AI tool will you use as your property management assistant? This helps us configure the right instructions.</p>
+
+<form method="post" action="/onboarding/ai-setup">
+    {% for value, name, desc in ai_tools %}
+    <label class="ai-option {% if ai_tool == value %}selected{% endif %}" onclick="this.querySelector('input').checked=true; document.querySelectorAll('.ai-option').forEach(o=>o.classList.remove('selected')); this.classList.add('selected');">
+        <div>
+            <input type="radio" name="ai_tool" value="{{ value }}" {% if ai_tool == value %}checked{% endif %}>
+            <span class="ai-option-title">{{ name }}</span>
+        </div>
+        <div class="ai-option-desc">{{ desc }}</div>
+    </label>
+    {% endfor %}
+
+    <div style="margin-top: 16px; padding: 12px 16px; background: var(--color-bg-secondary); border-radius: var(--radius); font-size: 13px; color: var(--color-text-secondary);">
+        All data stays local as markdown files. You can switch AI tools anytime in Settings.
+    </div>
+
+    <div class="wizard-nav">
+        <a href="/onboarding/properties" class="btn">Back</a>
+        <button type="submit" class="btn btn-primary">Next: Review</button>
+    </div>
+</form>
+{% endblock %}

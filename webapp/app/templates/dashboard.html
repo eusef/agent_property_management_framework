@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — Property Management{% endblock %}
+{% block content %}
+<div class="dashboard">
+    <h1>Dashboard</h1>
+    <p class="dashboard-subtitle">Property management overview</p>
+
+    <div class="widget-controls">
+        <span class="widget-controls-label">Widgets:</span>
+        <button class="widget-toggle active" data-widget="open-tasks" onclick="toggleWidget('open-tasks')">Open Tasks</button>
+        <button class="widget-toggle active" data-widget="recent-files" onclick="toggleWidget('recent-files')">Recent Files</button>
+        <button class="widget-toggle active" data-widget="pinned-files" onclick="toggleWidget('pinned-files')">TASKS &amp; DASHBOARD</button>
+        <button class="widget-toggle active" data-widget="property-cards" onclick="toggleWidget('property-cards')">Properties</button>
+    </div>
+
+    <div class="widget-grid">
+        <div class="widget" id="widget-open-tasks"
+             hx-get="/api/widget/open-tasks" hx-trigger="load" hx-swap="innerHTML">
+            <div class="widget-loading">
+                <div class="widget-header"><h2>Open Tasks</h2></div>
+                <div class="widget-body"><p class="text-muted">Loading...</p></div>
+            </div>
+        </div>
+
+        <div class="widget" id="widget-recent-files"
+             hx-get="/api/widget/recent-files" hx-trigger="load" hx-swap="innerHTML">
+            <div class="widget-loading">
+                <div class="widget-header"><h2>Recently Modified</h2></div>
+                <div class="widget-body"><p class="text-muted">Loading...</p></div>
+            </div>
+        </div>
+
+        <div class="widget widget-full" id="widget-pinned-files"
+             hx-get="/api/widget/pinned-files" hx-trigger="load" hx-swap="innerHTML">
+            <div class="widget-loading">
+                <div class="widget-header"><h2>TASKS.md &amp; DASHBOARD.md</h2></div>
+                <div class="widget-body"><p class="text-muted">Loading...</p></div>
+            </div>
+        </div>
+
+        <div class="widget widget-full" id="widget-property-cards"
+             hx-get="/api/widget/property-cards" hx-trigger="load" hx-swap="innerHTML">
+            <div class="widget-loading">
+                <div class="widget-header"><h2>Properties</h2></div>
+                <div class="widget-body"><p class="text-muted">Loading...</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

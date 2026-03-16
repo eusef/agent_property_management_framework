@@ -1,0 +1,30 @@
+<div class="editor">
+    <div class="editor-toolbar">
+        <span class="file-path">{{ file_path }}</span>
+        <div class="editor-actions">
+            <label class="auto-save-toggle">
+                <input type="checkbox" id="auto-save-toggle"> Auto-save
+            </label>
+            <span id="save-status"></span>
+            <button id="save-btn" class="btn btn-primary btn-sm" disabled>Save</button>
+            <button id="cancel-btn" class="btn btn-sm">Cancel</button>
+        </div>
+    </div>
+    <div class="editor-panes">
+        <div class="editor-left">
+            <textarea id="editor-textarea"
+                      class="editor-textarea"
+                      name="content"
+                      data-file-path="{{ file_path }}"
+                      hx-post="/api/preview"
+                      hx-trigger="keyup changed delay:400ms"
+                      hx-target="#preview"
+                      hx-swap="innerHTML">{{ raw_content }}</textarea>
+        </div>
+        <div class="editor-right">
+            <div id="preview" class="markdown-body">
+                {{ preview_content | safe }}
+            </div>
+        </div>
+    </div>
+</div>

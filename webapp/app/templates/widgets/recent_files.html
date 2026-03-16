@@ -1,0 +1,35 @@
+<div class="widget-header">
+    <h2>Recently Modified</h2>
+    <a href="#" class="btn btn-sm" hx-get="/api/widget/recent-files"
+       hx-target="#widget-recent-files" hx-swap="innerHTML">Refresh</a>
+</div>
+<div class="widget-body">
+    {% if files %}
+    <table class="recent-files-table">
+        <thead>
+            <tr>
+                <th>File</th>
+                <th>Modified</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for f in files %}
+            <tr>
+                <td>
+                    <a href="/file/{{ f.rel_path }}"
+                       hx-get="/file/{{ f.rel_path }}"
+                       hx-target="#main" hx-push-url="true"
+                       title="{{ f.rel_path }}">{{ f.name }}</a>
+                    <span class="recent-file-path">{{ f.rel_path }}</span>
+                </td>
+                <td class="nowrap">{{ f.mtime_str }}</td>
+                <td class="nowrap">{{ f.size_str }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="text-muted">No files found.</p>
+    {% endif %}
+</div>

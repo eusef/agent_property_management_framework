@@ -1,0 +1,28 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}Jurisdiction - Setup{% endblock %}
+
+{% block wizard_content %}
+<h1 class="wizard-title">Jurisdiction</h1>
+<p class="wizard-subtitle">Select your state. This helps configure compliance checklists and legal templates for your jurisdiction.</p>
+
+<form method="post" action="/onboarding/jurisdiction">
+    <div class="form-group">
+        <label class="form-label" for="state_code">State *</label>
+        <select id="state_code" name="state_code" class="form-select {% if errors.get('state') %}error{% endif %}">
+            <option value="">-- Select your state --</option>
+            {% for code, name in states %}
+            <option value="{{ code }}" {% if jurisdiction.get('state_code') == code %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+        </select>
+        {% if errors.get('state') %}
+        <div class="form-error">{{ errors.state }}</div>
+        {% endif %}
+    </div>
+
+    <div class="wizard-nav">
+        <a href="/onboarding/owner" class="btn">Back</a>
+        <button type="submit" class="btn btn-primary">Next: Add Property</button>
+    </div>
+</form>
+{% endblock %}

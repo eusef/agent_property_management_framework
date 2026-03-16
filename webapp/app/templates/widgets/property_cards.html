@@ -1,0 +1,86 @@
+<div class="widget-header">
+    <h2>Properties ({{ cards|length }})</h2>
+    <a href="#" class="btn btn-sm" hx-get="/api/widget/property-cards"
+       hx-target="#widget-property-cards" hx-swap="innerHTML">Refresh</a>
+</div>
+<div class="widget-body">
+    {% if cards %}
+    <div class="property-cards">
+        {% for card in cards %}
+        <div class="property-card">
+            <div class="property-card-header">
+                <h3>
+                    <a href="/file/{{ card.rel_path }}"
+                       hx-get="/file/{{ card.rel_path }}"
+                       hx-target="#main" hx-push-url="true">{{ card.title or card.dir_name }}</a>
+                </h3>
+                {% if card.status %}
+                <span class="property-status">{{ card.status }}</span>
+                {% endif %}
+            </div>
+            <div class="property-card-body">
+                <table class="property-card-table">
+                    <tr>
+                        <td class="prop-label">Address</td>
+                        <td>{{ card.address }}</td>
+                    </tr>
+                    {% if card.type %}
+                    <tr>
+                        <td class="prop-label">Type</td>
+                        <td>{{ card.type }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if card.year_built %}
+                    <tr>
+                        <td class="prop-label">Year Built</td>
+                        <td>{{ card.year_built }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if card.county %}
+                    <tr>
+                        <td class="prop-label">County</td>
+                        <td>{{ card.county }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if card.rent %}
+                    <tr>
+                        <td class="prop-label">Rent</td>
+                        <td>{{ card.rent }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if card.insurance_carrier %}
+                    <tr>
+                        <td class="prop-label">Insurance</td>
+                        <td>{{ card.insurance_carrier }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if card.insurance_renewal %}
+                    <tr>
+                        <td class="prop-label">Renewal</td>
+                        <td>{{ card.insurance_renewal }}</td>
+                    </tr>
+                    {% endif %}
+                </table>
+                {% if card.alerts %}
+                <div class="property-alerts">
+                    <strong>Alerts:</strong>
+                    <ul>
+                        {% for alert in card.alerts %}
+                        <li>{{ alert }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            <div class="property-card-footer">
+                <a href="/file/{{ card.rel_path }}" class="btn btn-sm"
+                   hx-get="/file/{{ card.rel_path }}"
+                   hx-target="#main" hx-push-url="true">View Full README</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-muted">No properties found.</p>
+    {% endif %}
+</div>

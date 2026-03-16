@@ -1,0 +1,9 @@
+<form class="search-form" action="/search" method="get">
+    <input type="text"
+           name="q"
+           class="search-input"
+           placeholder="Search files and content..."
+           value="{{ query|default('') }}"
+           autocomplete="off">
+    <button type="submit" class="btn btn-sm">Search</button>
+</form>

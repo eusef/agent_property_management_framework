@@ -1,0 +1,101 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}{% if is_edit %}Edit{% else %}Add{% endif %} Property - Setup{% endblock %}
+
+{% block wizard_content %}
+<h1 class="wizard-title">{% if is_edit %}Edit Property{% else %}Add a Property{% endif %}</h1>
+<p class="wizard-subtitle">
+    {% if is_edit %}Update this property's details.{% else %}Enter the details for your first rental property. You can add more properties in the next step.{% endif %}
+</p>
+
+<form method="post" action="{% if is_edit %}/onboarding/property/{{ edit_slug }}{% else %}/onboarding/property{% endif %}">
+    <div class="form-group">
+        <label class="form-label" for="address">Street Address *</label>
+        <input type="text" id="address" name="address" class="form-input {% if errors.get('address') %}error{% endif %}"
+               value="{{ prop.get('address', '') }}" placeholder="e.g. 123 Maple St, Portland, OR 97201" autofocus>
+        {% if errors.get('address') %}
+        <div class="form-error">{{ errors.address }}</div>
+        {% endif %}
+        <div class="form-hint">Full address including city, state, and ZIP</div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label class="form-label" for="property_type">Property Type</label>
+            <select id="property_type" name="property_type" class="form-select">
+                <option value="">-- Select --</option>
+                <option value="single_family" {% if prop.get('type') == 'single_family' %}selected{% endif %}>Single family home</option>
+                <option value="duplex" {% if prop.get('type') == 'duplex' %}selected{% endif %}>Duplex</option>
+                <option value="condo" {% if prop.get('type') == 'condo' %}selected{% endif %}>Condo</option>
+                <option value="townhouse" {% if prop.get('type') == 'townhouse' %}selected{% endif %}>Townhouse</option>
+                <option value="multi_family" {% if prop.get('type') == 'multi_family' %}selected{% endif %}>Multi-family</option>
+                <option value="apartment" {% if prop.get('type') == 'apartment' %}selected{% endif %}>Apartment</option>
+                <option value="other" {% if prop.get('type') == 'other' %}selected{% endif %}>Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="status">Status</label>
+            <select id="status" name="status" class="form-select">
+                <option value="active" {% if prop.get('status', 'active') == 'active' %}selected{% endif %}>Active (rented)</option>
+                <option value="vacant" {% if prop.get('status') == 'vacant' %}selected{% endif %}>Vacant</option>
+                <option value="transitioning" {% if prop.get('status') == 'transitioning' %}selected{% endif %}>Transitioning</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label class="form-label" for="bedrooms">Bedrooms</label>
+            <input type="text" id="bedrooms" name="bedrooms" class="form-input"
+                   value="{{ prop.get('bedrooms', '') }}" placeholder="e.g. 3">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="bathrooms">Bathrooms</label>
+            <input type="text" id="bathrooms" name="bathrooms" class="form-input"
+                   value="{{ prop.get('bathrooms', '') }}" placeholder="e.g. 2">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label class="form-label" for="year_built">Year Built</label>
+            <input type="text" id="year_built" name="year_built" class="form-input"
+                   value="{{ prop.get('year_built', '') }}" placeholder="e.g. 1995">
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="rent_amount">Monthly Rent ($)</label>
+            <input type="text" id="rent_amount" name="rent_amount" class="form-input"
+                   value="{{ prop.get('rent_amount', '') }}" placeholder="e.g. 1850.00">
+        </div>
+    </div>
+
+    <div class="form-section-title" style="margin-top: 8px;">Tenant Info (optional)</div>
+
+    <div class="form-group">
+        <label class="form-label" for="tenant_name">Tenant Name</label>
+        <input type="text" id="tenant_name" name="tenant_name" class="form-input"
+               value="{{ prop.get('tenant_name', '') }}" placeholder="e.g. Jane Doe">
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label class="form-label" for="lease_type">Lease Type</label>
+            <select id="lease_type" name="lease_type" class="form-select">
+                <option value="">-- Select --</option>
+                <option value="fixed" {% if prop.get('lease_type') == 'fixed' %}selected{% endif %}>Fixed-term</option>
+                <option value="month-to-month" {% if prop.get('lease_type') == 'month-to-month' %}selected{% endif %}>Month-to-month</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="lease_end">Lease End Date</label>
+            <input type="date" id="lease_end" name="lease_end" class="form-input"
+                   value="{{ prop.get('lease_end', '') }}">
+        </div>
+    </div>
+
+    <div class="wizard-nav">
+        <a href="{% if is_edit %}/onboarding/properties{% else %}/onboarding/jurisdiction{% endif %}" class="btn">Back</a>
+        <button type="submit" class="btn btn-primary">{% if is_edit %}Save Changes{% else %}Save & Continue{% endif %}</button>
+    </div>
+</form>
+{% endblock %}

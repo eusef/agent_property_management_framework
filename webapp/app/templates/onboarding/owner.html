@@ -1,0 +1,38 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}Owner Profile - Setup{% endblock %}
+
+{% block wizard_content %}
+<h1 class="wizard-title">Owner Profile</h1>
+<p class="wizard-subtitle">Tell us about yourself. This information is stored locally and used to populate your property documents.</p>
+
+<form method="post" action="/onboarding/owner">
+    <div class="form-group">
+        <label class="form-label" for="name">Full Name *</label>
+        <input type="text" id="name" name="name" class="form-input {% if errors.get('name') %}error{% endif %}"
+               value="{{ owner.get('name', '') }}" placeholder="e.g. John Smith" autofocus>
+        {% if errors.get('name') %}
+        <div class="form-error">{{ errors.name }}</div>
+        {% endif %}
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-input"
+               value="{{ owner.get('email', '') }}" placeholder="e.g. john@example.com">
+        <div class="form-hint">Optional. Used in property documents.</div>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label" for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" class="form-input"
+               value="{{ owner.get('phone', '') }}" placeholder="e.g. (503) 555-1234">
+        <div class="form-hint">Optional. Used for emergency contacts in property files.</div>
+    </div>
+
+    <div class="wizard-nav">
+        <a href="/onboarding" class="btn">Back</a>
+        <button type="submit" class="btn btn-primary">Next: Jurisdiction</button>
+    </div>
+</form>
+{% endblock %}

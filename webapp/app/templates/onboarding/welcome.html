@@ -1,0 +1,43 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}Welcome - Property Management Setup{% endblock %}
+
+{% block wizard_content %}
+<h1 class="wizard-title">Welcome to Property Management</h1>
+<p class="wizard-subtitle">
+    Let's get your property management system set up. This wizard will walk you through
+    configuring your properties, jurisdiction, and preferences.
+</p>
+
+<ul class="welcome-features">
+    <li>Set up your owner profile</li>
+    <li>Select your state for compliance tracking</li>
+    <li>Add your rental properties</li>
+    <li>Configure your AI assistant</li>
+    <li>Auto-generate property files and directories</li>
+</ul>
+
+<p style="color: var(--color-text-secondary); font-size: 13px;">
+    This takes about 5 minutes. Your progress is saved at each step, so you can close and come back anytime.
+</p>
+
+{% if can_resume %}
+<div style="margin-top: 24px; padding: 16px; background: var(--color-warning-bg); border-radius: var(--radius);">
+    <strong>Welcome back!</strong> You have an incomplete setup (step {{ resume_step }} of {{ total_steps }}).
+    <div style="margin-top: 12px; display: flex; gap: 8px;">
+        <a href="/onboarding/{% if resume_step == 2 %}owner{% elif resume_step == 3 %}jurisdiction{% elif resume_step == 4 %}property{% elif resume_step == 5 %}properties{% elif resume_step == 6 %}ai-setup{% elif resume_step == 7 %}summary{% else %}owner{% endif %}"
+           class="btn btn-primary">Resume Setup</a>
+        <form method="post" action="/onboarding/start" style="display: inline;">
+            <button type="submit" class="btn">Start Over</button>
+        </form>
+    </div>
+</div>
+{% else %}
+<div class="wizard-nav">
+    <div class="wizard-nav-spacer"></div>
+    <form method="post" action="/onboarding/start">
+        <button type="submit" class="btn btn-primary">Get Started</button>
+    </form>
+</div>
+{% endif %}
+{% endblock %}

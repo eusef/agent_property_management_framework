@@ -1,0 +1,15 @@
+[project]
+name = "property-mgmt-webapp"
+version = "0.1.0"
+description = "Local web interface for markdown-based property management"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "unit: Unit tests",
+    "integration: Integration tests",
+    "acceptance: Acceptance tests",
+    "slow: Slow-running tests",
+]
+asyncio_mode = "auto"

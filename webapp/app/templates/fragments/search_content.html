@@ -1,0 +1,58 @@
+<div class="search-results">
+    <h1>Search Results</h1>
+    {% if empty_query %}
+        <p class="text-muted">Enter a search term to find files and content.</p>
+    {% else %}
+        <p class="search-summary">
+            Results for "<strong>{{ query }}</strong>" —
+            {{ results.file_matches|length }} file name match{{ 'es' if results.file_matches|length != 1 else '' }},
+            {{ results.content_matches|length }} file{{ 's' if results.content_matches|length != 1 else '' }} with content matches
+        </p>
+
+        {% if results.file_matches %}
+        <section class="results-section">
+            <h2>File Name Matches</h2>
+            <ul class="file-match-list">
+                {% for f in results.file_matches %}
+                <li class="result-item">
+                    <a href="/file/{{ f.rel_path }}"
+                       hx-get="/file/{{ f.rel_path }}"
+                       hx-target="#main" hx-push-url="true">{{ f.rel_path }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+
+        {% if results.content_matches %}
+        <section class="results-section">
+            <h2>Content Matches</h2>
+            {% for file in results.content_matches %}
+            <div class="content-match-file">
+                <h3>
+                    <a href="/file/{{ file.rel_path }}"
+                       hx-get="/file/{{ file.rel_path }}"
+                       hx-target="#main" hx-push-url="true">{{ file.rel_path }}</a>
+                    <span class="match-count">({{ file.matches|length }} match{{ 'es' if file.matches|length != 1 else '' }})</span>
+                </h3>
+                {% for m in file.matches %}
+                <div class="match-context">
+                    {% if m.context_before %}
+                    <div class="context-line">{{ m.context_before }}</div>
+                    {% endif %}
+                    <div class="match-line"><span class="line-num">{{ m.line_num }}</span>{{ m.line }}</div>
+                    {% if m.context_after %}
+                    <div class="context-line">{{ m.context_after }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </section>
+        {% endif %}
+
+        {% if not results.file_matches and not results.content_matches %}
+        <p class="no-results">No results found for "{{ query }}".</p>
+        {% endif %}
+    {% endif %}
+</div>

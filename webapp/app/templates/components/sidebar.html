@@ -1,0 +1,13 @@
+{% from "components/file_tree_macros.html" import render_node %}
+<div class="sidebar-content">
+    <h3 class="sidebar-title">Files</h3>
+    {% if tree %}
+        <div class="file-tree">
+            {% for node in tree %}
+                {{ render_node(node, current_path) }}
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="sidebar-empty">No markdown files found.</p>
+    {% endif %}
+</div>

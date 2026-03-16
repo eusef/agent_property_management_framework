@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Property Management{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0969da">
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192.png">
+    <link rel="apple-touch-icon" href="/static/icons/icon-192.png">
+    <script src="/static/js/htmx.min.js"></script>
+    <noscript>
+        <style>.requires-js { display: none; }</style>
+        <p style="background:#fff3cd;padding:12px;text-align:center;border-bottom:1px solid #ffc107;">
+            This application requires JavaScript to be enabled for full functionality.
+        </p>
+    </noscript>
+</head>
+<body>
+    <!-- PWA Install Banner -->
+    <div class="install-banner" id="install-banner">
+        <span>Install Property Management as a desktop app</span>
+        <button class="btn btn-primary btn-sm" id="install-btn">Install</button>
+        <button class="install-banner-dismiss" id="install-dismiss" title="Dismiss">&times;</button>
+    </div>
+
+    <header class="header">
+        <div class="header-left">
+            <a href="/" class="logo" hx-get="/" hx-target="#main" hx-push-url="true">Property Management</a>
+        </div>
+        <div class="header-center">
+            {% include "components/search_input.html" %}
+        </div>
+        <div class="header-right">
+            <a href="/settings" class="settings-link" title="Settings">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+            </a>
+            <button class="btn btn-danger btn-sm"
+                    hx-post="/api/shutdown"
+                    hx-confirm="Are you sure you want to stop the server?"
+                    hx-target="body"
+                    hx-swap="innerHTML">
+                Stop Server
+            </button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <nav class="sidebar" id="sidebar">
+            {% block sidebar %}
+                {% include "components/sidebar.html" %}
+            {% endblock %}
+        </nav>
+
+        <main class="content" id="main">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

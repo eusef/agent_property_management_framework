@@ -1,0 +1,55 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}Review - Setup{% endblock %}
+
+{% block wizard_content %}
+<h1 class="wizard-title">Review Your Setup</h1>
+<p class="wizard-subtitle">Everything look good? We'll create your property files and configure the system.</p>
+
+<div class="summary-card">
+    <h3>Owner</h3>
+    <table class="summary-table">
+        <tr><td>Name</td><td>{{ config.owner.name }}</td></tr>
+        {% if config.owner.email %}<tr><td>Email</td><td>{{ config.owner.email }}</td></tr>{% endif %}
+        {% if config.owner.phone %}<tr><td>Phone</td><td>{{ config.owner.phone }}</td></tr>{% endif %}
+    </table>
+</div>
+
+<div class="summary-card">
+    <h3>Jurisdiction</h3>
+    <table class="summary-table">
+        <tr><td>State</td><td>{{ config.jurisdiction.state }} ({{ config.jurisdiction.state_code }})</td></tr>
+    </table>
+</div>
+
+<div class="summary-card">
+    <h3>Properties ({{ config.properties|length }})</h3>
+    {% for prop in config.properties %}
+    <table class="summary-table" {% if not loop.last %}style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--color-border);"{% endif %}>
+        <tr><td>Address</td><td>{{ prop.address }}</td></tr>
+        {% if prop.type %}<tr><td>Type</td><td>{{ prop.type | replace('_', ' ') | title }}</td></tr>{% endif %}
+        {% if prop.bedrooms %}<tr><td>Bedrooms</td><td>{{ prop.bedrooms }}</td></tr>{% endif %}
+        {% if prop.rent_amount %}<tr><td>Monthly Rent</td><td>${{ prop.rent_amount }}</td></tr>{% endif %}
+        {% if prop.tenant_name %}<tr><td>Tenant</td><td>{{ prop.tenant_name }}</td></tr>{% endif %}
+    </table>
+    {% endfor %}
+</div>
+
+<div class="summary-card">
+    <h3>AI Assistant</h3>
+    <table class="summary-table">
+        <tr><td>Tool</td><td>{{ ai_label }}</td></tr>
+    </table>
+</div>
+
+<div style="margin-top: 16px; font-size: 13px; color: var(--color-text-secondary);">
+    This will create property directories, populate README templates, and update your AGENT_CONTEXT.md.
+</div>
+
+<div class="wizard-nav">
+    <a href="/onboarding/ai-setup" class="btn">Back</a>
+    <form method="post" action="/onboarding/complete">
+        <button type="submit" class="btn btn-primary">Complete Setup</button>
+    </form>
+</div>
+{% endblock %}

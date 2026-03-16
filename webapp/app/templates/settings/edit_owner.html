@@ -1,0 +1,24 @@
+<form method="post" action="/settings/owner" hx-post="/settings/owner" hx-target="#settings-content" hx-swap="innerHTML">
+    <div class="form-group">
+        <label class="form-label" for="name">Full Name *</label>
+        <input type="text" id="name" name="name" class="form-input {% if errors.get('name') %}error{% endif %}"
+               value="{{ owner.get('name', '') }}" autofocus>
+        {% if errors.get('name') %}
+        <div class="form-error">{{ errors.name }}</div>
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-input"
+               value="{{ owner.get('email', '') }}">
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" class="form-input"
+               value="{{ owner.get('phone', '') }}">
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        <a href="/settings" class="btn btn-sm">Cancel</a>
+    </div>
+</form>

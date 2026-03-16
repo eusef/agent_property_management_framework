@@ -1,0 +1,18 @@
+<form method="post" action="/settings/jurisdiction" hx-post="/settings/jurisdiction" hx-target="#settings-content" hx-swap="innerHTML">
+    <div class="form-group">
+        <label class="form-label" for="state_code">State *</label>
+        <select id="state_code" name="state_code" class="form-select {% if errors.get('state') %}error{% endif %}">
+            <option value="">-- Select your state --</option>
+            {% for code, name in states %}
+            <option value="{{ code }}" {% if jurisdiction.get('state_code') == code %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+        </select>
+        {% if errors.get('state') %}
+        <div class="form-error">{{ errors.state }}</div>
+        {% endif %}
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        <a href="/settings" class="btn btn-sm">Cancel</a>
+    </div>
+</form>

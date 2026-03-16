@@ -1,0 +1,39 @@
+<div class="widget-header">
+    <h2>Open Tasks ({{ total }})</h2>
+    <a href="#" class="btn btn-sm" hx-get="/api/widget/open-tasks"
+       hx-target="#widget-open-tasks" hx-swap="innerHTML">Refresh</a>
+</div>
+<div class="widget-body">
+    {% if total == 0 %}
+        <p class="text-muted">No open tasks found.</p>
+    {% else %}
+        {% for group in task_groups %}
+        <div class="task-group">
+            <h3 class="task-group-file">
+                <a href="/file/{{ group.file_path }}"
+                   hx-get="/file/{{ group.file_path }}"
+                   hx-target="#main" hx-push-url="true">{{ group.file_path }}</a>
+                <span class="task-group-count">({{ group.tasks|length }})</span>
+            </h3>
+            <ul class="task-list">
+                {% for task in group.tasks %}
+                <li class="checkbox-item">
+                    <label class="checkbox-task">
+                        <input type="checkbox"
+                               hx-post="/api/toggle-checkbox"
+                               hx-vals='{"file_path": "{{ group.file_path }}", "line_num": {{ task.line_num }}, "original_text": "{{ task.text|replace("\\", "\\\\")|replace("\"", "&quot;")|replace("'", "&#39;") }}"}'
+                               hx-target="this"
+                               hx-swap="none"
+                               hx-on::after-request="htmx.ajax('GET', '/api/widget/open-tasks', {target: '#widget-open-tasks', swap: 'innerHTML'})" />
+                        <span>
+                            {% if task.heading %}<span class="task-heading-context">{{ task.heading }} &rsaquo;</span> {% endif %}
+                            {{ task.text_html|safe }}
+                        </span>
+                    </label>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    {% endif %}
+</div>

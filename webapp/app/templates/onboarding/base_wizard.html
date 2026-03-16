@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Setup - Property Management{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#0969da">
+    <script src="/static/js/htmx.min.js"></script>
+</head>
+<body class="wizard-body">
+    <header class="wizard-header">
+        <a href="/onboarding" class="logo">Property Management</a>
+    </header>
+
+    <div class="wizard-container">
+        {% if step is defined and total_steps is defined %}
+        <div class="wizard-progress">
+            <div class="wizard-progress-bar">
+                <div class="wizard-progress-fill" style="width: {{ (step / total_steps * 100)|int }}%"></div>
+            </div>
+            <div class="wizard-steps">
+                {% for i in range(1, total_steps + 1) %}
+                <span class="wizard-step-dot {% if i < step %}completed{% elif i == step %}active{% endif %}"
+                      title="Step {{ i }}">{{ i }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="wizard-content">
+            {% block wizard_content %}{% endblock %}
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

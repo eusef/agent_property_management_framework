@@ -1,0 +1,100 @@
+<h1>Settings</h1>
+
+<!-- Owner Section -->
+<div class="settings-section">
+    <div class="settings-section-header">
+        <h2>Owner Profile</h2>
+        <button class="btn btn-sm"
+                hx-get="/settings/owner/edit"
+                hx-target="#owner-body"
+                hx-swap="innerHTML">Edit</button>
+    </div>
+    <div class="settings-section-body" id="owner-body">
+        <div class="settings-field">
+            <span class="settings-field-label">Name</span>
+            <span class="settings-field-value">{{ config.owner.name or '—' }}</span>
+        </div>
+        <div class="settings-field">
+            <span class="settings-field-label">Email</span>
+            <span class="settings-field-value">{{ config.owner.email or '—' }}</span>
+        </div>
+        <div class="settings-field">
+            <span class="settings-field-label">Phone</span>
+            <span class="settings-field-value">{{ config.owner.phone or '—' }}</span>
+        </div>
+    </div>
+</div>
+
+<!-- Jurisdiction Section -->
+<div class="settings-section">
+    <div class="settings-section-header">
+        <h2>Jurisdiction</h2>
+        <button class="btn btn-sm"
+                hx-get="/settings/jurisdiction/edit"
+                hx-target="#jurisdiction-body"
+                hx-swap="innerHTML">Edit</button>
+    </div>
+    <div class="settings-section-body" id="jurisdiction-body">
+        <div class="settings-field">
+            <span class="settings-field-label">State</span>
+            <span class="settings-field-value">{{ config.jurisdiction.state or '—' }}{% if config.jurisdiction.state_code %} ({{ config.jurisdiction.state_code }}){% endif %}</span>
+        </div>
+    </div>
+</div>
+
+<!-- Properties Section -->
+<div class="settings-section">
+    <div class="settings-section-header">
+        <h2>Properties ({{ config.properties|length }})</h2>
+        <a href="/settings/property/add" class="btn btn-sm">+ Add Property</a>
+    </div>
+    <div class="settings-section-body">
+        {% if config.properties %}
+            {% for prop in config.properties %}
+            <div class="settings-property-card">
+                <div class="settings-property-header">
+                    <h3>{{ prop.address or prop.slug }}</h3>
+                    <div class="settings-property-actions">
+                        <a href="/settings/property/{{ prop.slug }}/edit" class="btn btn-sm">Edit</a>
+                        <form method="post" action="/settings/property/{{ prop.slug }}/delete" style="display:inline;">
+                            <button type="submit" class="btn btn-sm btn-danger"
+                                    onclick="return confirm('Delete this property and its files? This cannot be undone.')">Remove</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="settings-property-body">
+                    {{ prop.get('type', '') | replace('_', ' ') | title }}
+                    {% if prop.bedrooms %} &middot; {{ prop.bedrooms }} bed{% endif %}
+                    {% if prop.bathrooms %} / {{ prop.bathrooms }} bath{% endif %}
+                    {% if prop.rent_amount %} &middot; ${{ prop.rent_amount }}/mo{% endif %}
+                    {% if prop.tenant_name %} &middot; Tenant: {{ prop.tenant_name }}{% endif %}
+                    <span style="float: right; color: var(--color-text-secondary); font-size: 12px;">{{ prop.status | title }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-muted">No properties configured.</p>
+        {% endif %}
+    </div>
+</div>
+
+<!-- AI Tool Section -->
+<div class="settings-section">
+    <div class="settings-section-header">
+        <h2>AI Assistant</h2>
+    </div>
+    <div class="settings-section-body">
+        <div class="settings-field">
+            <span class="settings-field-label">Tool</span>
+            <span class="settings-field-value">{{ ai_label or config.ai_tool or '—' }}</span>
+        </div>
+    </div>
+</div>
+
+<!-- Re-onboard -->
+<div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--color-border);">
+    <form method="post" action="/settings/re-onboard"
+          onsubmit="return confirm('This will reset the setup wizard. Your existing data will be preserved, but you will be redirected to the setup flow. Continue?')">
+        <button type="submit" class="btn">Re-run Setup Wizard</button>
+    </form>
+</div>

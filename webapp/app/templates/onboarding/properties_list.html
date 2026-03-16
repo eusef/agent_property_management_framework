@@ -1,0 +1,48 @@
+{% extends "onboarding/base_wizard.html" %}
+
+{% block title %}Your Properties - Setup{% endblock %}
+
+{% block wizard_content %}
+<h1 class="wizard-title">Your Properties</h1>
+<p class="wizard-subtitle">
+    {% if properties %}
+    You've added {{ properties|length }} propert{{ 'y' if properties|length == 1 else 'ies' }}.
+    Add more or continue to the next step.
+    {% else %}
+    You haven't added any properties yet.
+    {% endif %}
+</p>
+
+{% for prop in properties %}
+<div class="property-list-item">
+    <div class="property-list-item-info">
+        <h3>{{ prop.get('address', 'Unknown address') }}</h3>
+        <p>{{ prop.get('type', '') | replace('_', ' ') | title }}
+           {% if prop.get('bedrooms') %} &middot; {{ prop.bedrooms }} bed{% endif %}
+           {% if prop.get('bathrooms') %} / {{ prop.bathrooms }} bath{% endif %}
+           {% if prop.get('rent_amount') %} &middot; ${{ prop.rent_amount }}/mo{% endif %}
+        </p>
+    </div>
+    <div class="property-list-actions">
+        <a href="/onboarding/property/{{ prop.slug }}/edit" class="btn btn-sm">Edit</a>
+        <form method="post" action="/onboarding/property/{{ prop.slug }}/delete" style="display:inline;">
+            <button type="submit" class="btn btn-sm btn-danger"
+                    onclick="return confirm('Remove this property?')">Remove</button>
+        </form>
+    </div>
+</div>
+{% endfor %}
+
+<div style="margin-top: 16px;">
+    <a href="/onboarding/property" class="btn">+ Add Another Property</a>
+</div>
+
+<div class="wizard-nav">
+    <a href="/onboarding/property" class="btn">Back</a>
+    {% if properties %}
+    <a href="/onboarding/ai-setup" class="btn btn-primary">Next: AI Setup</a>
+    {% else %}
+    <a href="/onboarding/property" class="btn btn-primary">Add a Property</a>
+    {% endif %}
+</div>
+{% endblock %}

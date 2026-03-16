@@ -1,0 +1,20 @@
+{% macro render_node(node, current_path) %}
+  {% if node.is_dir %}
+    <details class="tree-dir" {% if current_path and current_path.startswith(node.rel_path + '/') %}open{% endif %}>
+      <summary>{{ node.name }}</summary>
+      <div class="tree-children">
+        {% for child in node.children %}
+          {{ render_node(child, current_path) }}
+        {% endfor %}
+      </div>
+    </details>
+  {% else %}
+    <a href="/file/{{ node.rel_path }}"
+       class="tree-file {% if node.rel_path == current_path %}active{% endif %}"
+       hx-get="/file/{{ node.rel_path }}"
+       hx-target="#main"
+       hx-push-url="true">
+      {{ node.name }}
+    </a>
+  {% endif %}
+{% endmacro %}
