@@ -26,5 +26,10 @@ class Settings:
     # Only show these file extensions
     allowed_extensions: frozenset = frozenset({".md"})
 
+    # Files hidden from the file browser (agent/developer files not relevant to end users)
+    hidden_files: frozenset = frozenset({
+        "AGENTS.md", "PRODUCT_DEFINITION.md",
+    })
+
 
 settings = Settings()

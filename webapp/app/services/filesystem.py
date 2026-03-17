@@ -90,6 +90,8 @@ def build_tree(root: Optional[Path] = None) -> list[TreeNode]:
                 )
                 top_level_dirs.append(node)
         elif entry.is_file() and entry.name.endswith(".md"):
+            if entry.name in settings.hidden_files:
+                continue
             rel_path = str(Path(entry.path).relative_to(root))
             top_level_files.append(TreeNode(
                 name=entry.name,

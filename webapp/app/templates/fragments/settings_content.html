@@ -82,8 +82,12 @@
 <div class="settings-section">
     <div class="settings-section-header">
         <h2>AI Assistant</h2>
+        <button class="btn btn-sm"
+                hx-get="/settings/ai-tool/edit"
+                hx-target="#ai-tool-body"
+                hx-swap="innerHTML">Edit</button>
     </div>
-    <div class="settings-section-body">
+    <div class="settings-section-body" id="ai-tool-body">
         <div class="settings-field">
             <span class="settings-field-label">Tool</span>
             <span class="settings-field-value">{{ ai_label or config.ai_tool or '—' }}</span>

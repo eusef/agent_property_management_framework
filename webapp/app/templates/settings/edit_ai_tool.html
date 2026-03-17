@@ -1,0 +1,14 @@
+<form method="post" action="/settings/ai-tool" hx-post="/settings/ai-tool" hx-target="#settings-content" hx-swap="innerHTML">
+    <div class="form-group">
+        <label class="form-label" for="ai_tool">AI Tool</label>
+        <select id="ai_tool" name="ai_tool" class="form-select">
+            {% for value, name, desc in ai_tools %}
+            <option value="{{ value }}" {% if current_tool == value %}selected{% endif %}>{{ name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div style="display: flex; gap: 8px;">
+        <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        <a href="/settings" class="btn btn-sm">Cancel</a>
+    </div>
+</form>

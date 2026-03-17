@@ -251,6 +251,35 @@ async def delete_property(request: Request, slug: str):
     return RedirectResponse("/settings", status_code=302)
 
 
+# --- AI Tool ---
+
+@router.get("/ai-tool/edit", response_class=HTMLResponse)
+async def edit_ai_tool_form(request: Request):
+    config = config_svc.get_config()
+    ai_tools = onboarding_svc.get_ai_tools()
+    is_htmx = request.headers.get("HX-Request") == "true"
+    if is_htmx:
+        return templates.TemplateResponse(
+            "settings/edit_ai_tool.html",
+            {"request": request, "ai_tools": ai_tools, "current_tool": config.get("ai_tool", "")},
+        )
+    return RedirectResponse("/settings", status_code=302)
+
+
+@router.post("/ai-tool", response_class=HTMLResponse)
+async def save_ai_tool(request: Request, ai_tool: str = Form("claude-code")):
+    config = config_svc.update_ai_tool(ai_tool)
+    onboarding_svc.update_agent_context(config)
+
+    is_htmx = request.headers.get("HX-Request") == "true"
+    if is_htmx:
+        return templates.TemplateResponse(
+            "fragments/settings_content.html",
+            _settings_fragment_ctx(request),
+        )
+    return RedirectResponse("/settings", status_code=302)
+
+
 # --- Re-onboard ---
 
 @router.post("/re-onboard", response_class=HTMLResponse)
