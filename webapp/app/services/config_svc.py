@@ -198,7 +198,9 @@ def migrate_from_existing() -> dict | None:
 
     # Try to detect owner from AGENT_CONTEXT.md or property READMEs
     owner_name = ""
-    context_file = settings.repo_root / "AGENT_CONTEXT.md"
+    context_file = settings.repo_root / ".pm_agent" / "AGENT_CONTEXT.md"
+    if not context_file.exists():
+        context_file = settings.repo_root / "AGENT_CONTEXT.md"
     if context_file.exists():
         try:
             ctx = context_file.read_text(encoding="utf-8")

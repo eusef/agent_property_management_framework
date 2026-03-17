@@ -20,7 +20,7 @@ class Settings:
 
     # Directories excluded from the file browser
     excluded_dirs: frozenset = frozenset({
-        "webapp", ".git", ".agents", ".venv", "__pycache__", ".DS_Store", ".claude"
+        "webapp", ".git", ".agents", ".venv", "__pycache__", ".DS_Store", ".claude", ".pm_agent"
     })
 
     # Only show these file extensions

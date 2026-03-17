@@ -274,7 +274,10 @@ def remove_property_files(slug: str) -> None:
 
 def update_agent_context(config: dict) -> None:
     """Rewrite AGENT_CONTEXT.md with current property list, owner, state."""
-    context_file = settings.repo_root / "AGENT_CONTEXT.md"
+    context_file = settings.repo_root / ".pm_agent" / "AGENT_CONTEXT.md"
+    if not context_file.exists():
+        # Fallback to root location for repos that haven't moved it yet
+        context_file = settings.repo_root / "AGENT_CONTEXT.md"
     if not context_file.exists():
         return
 
