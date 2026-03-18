@@ -117,10 +117,27 @@
 
 ---
 
+## Pre-Move-In Verifications
+
+- [ ] **Renter's insurance:** Proof of active policy collected before keys provided
+  - Carrier: _______________
+  - Policy #: _______________
+  - Expiration: _______________
+  - Recorded in `compliance/insurance-tracker.md`
+
+- [ ] **Lead-based paint disclosure (pre-1978 properties only):**
+  - [ ] EPA "Protect Your Family From Lead in Your Home" pamphlet provided to tenant
+  - [ ] Lead-based paint disclosure form signed by tenant
+  - [ ] Disclosure of any known lead-based paint or hazards
+  - [ ] N/A - property built after 1978
+
+---
+
 ## Photos
 
-- [ ] Photos taken of each room
+- [ ] Photos taken of each room (minimum: 2 angles per room)
 - [ ] Photos include timestamps
+- [ ] Photos of exterior front and rear
 - [ ] Copies of photos provided to tenant
 
 ---
@@ -132,3 +149,7 @@
 **Landlord:** _________________________ Date: ___________
 
 *Both parties agree this checklist accurately reflects the condition of the property at move-in.*
+
+---
+
+*For the complete move-in day sequence (funds, lease signing, disclosures, inspection, keys), see `templates/checklists/move-in-day.md`.*

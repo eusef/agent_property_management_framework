@@ -55,10 +55,57 @@ These trades need at least one reliable contact before self-managing:
 When choosing a new vendor:
 1. Licensed and insured (verify - don't take their word for it)
 2. State contractor license (required in most states for work over a certain amount)
-3. References from other landlords if possible
-4. Get at least 2 quotes for any job over $500
-5. Track performance in vendors/performance.csv after each job
-6. Collect W-9 before first payment (needed for 1099 if total payments exceed $600/year)
+3. Request Certificate of Insurance and ask to be listed as additional insured (for jobs over $1,000)
+4. References from other landlords if possible
+5. Get at least 2-3 quotes for any job over $500
+6. Track performance in vendors/performance.csv after each job
+7. Collect W-9 before first payment (needed for 1099 if total payments exceed $600/year)
+
+---
+
+## Working With Contractors - Payment and Contract Rules
+
+### Payment Terms
+
+- **NEVER pay 100% upfront.** This is a non-negotiable rule.
+- Standard payment schedule for jobs over $500:
+  - 1/3 at project start
+  - 1/3 at midpoint
+  - 1/3 upon satisfactory completion
+- For small jobs under $500: 50% at start, 50% at completion is acceptable
+- For emergency repairs: payment upon completion is standard
+
+### Bidding Requirements
+
+| Job Size | Requirement |
+|----------|-------------|
+| Under $300 | 1 trusted vendor is fine |
+| $300-$1,000 | Get at least 2 quotes |
+| Over $1,000 | Get at least 3 quotes |
+
+### Contract Essentials
+
+For any job over $500, get these in writing before work begins:
+- Scope of work (specific, detailed description)
+- Materials specified (brand, grade, color - not "contractor's choice")
+- Fixed price (avoid cost-plus bids - they can balloon)
+- Timeline (start date, estimated completion, penalties for delay if applicable)
+- Payment schedule
+- Warranty on work
+- Cleanup expectations
+
+### Vendor Onboarding Checklist
+
+Before making the first payment to any new vendor:
+- [ ] W-9 collected and filed
+- [ ] License number verified with state licensing board
+- [ ] Insurance certificate received (for trades that require it)
+- [ ] Added to vendor database (Regular Vendors table above)
+- [ ] Added to vendors/performance.csv
+
+### 1099 Tracking
+
+Any unincorporated vendor (sole proprietor, partnership) paid $600+ in a calendar year requires a 1099-NEC filing by January 31. Track cumulative payments per vendor throughout the year. See `docs/tax-planning.md` and `financials/tax/[YEAR]/1099-tracking.csv`.
 
 ---
 
@@ -66,3 +113,4 @@ When choosing a new vendor:
 
 - Individual vendor detail files go in vendors/{vendor-slug}.md
 - Performance history tracked in vendors/performance.csv
+- Every maintenance visit is also a property inspection - vendor should note the general condition of the unit and report any visible lease violations

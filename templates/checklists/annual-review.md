@@ -30,24 +30,57 @@
 
 ## Rent Analysis
 
+**Rule: Raise rent every year.** Even small annual increases compound dramatically. Skipping a year permanently lowers your income baseline and sets tenant expectations against future increases.
+
 | Item | Value |
 |------|-------|
 | Current rent | $ |
-| Market rate (comps) | $ |
+| Market rate (comps - minimum 3 comparable properties) | $ |
 | Difference | $ (____%) |
-| Rent increase warranted? | [ ] Yes [ ] No |
-| If yes, proposed new rent | $ |
-| Notice deadline (90 days before) | |
+| Proposed increase | ____% ($____/month) |
+| Proposed new rent | $ |
+| Notice deadline (90 days before lease renewal in Oregon) | |
+
+**Increase guidelines:**
+- Minimum: match inflation (typically 2-3%)
+- Target: bring within 5% of market rate
+- If significantly below market: consider 5-10% increase with strong justification (comps data)
+- Check rent control limits if applicable (Oregon: buildings 15+ years old)
+- See `docs/lease-strategy.md` for detailed guidance on rent strategy
 
 ## Property Condition
 
 - [ ] Exterior inspection completed
 - [ ] Interior inspection completed (if scheduled this year)
-- [ ] Roof - estimated remaining life: ___ years
-- [ ] HVAC - age: ___ years, last serviced: ___
-- [ ] Water heater - age: ___ years
+- [ ] Seasonal maintenance tasks completed per `compliance/seasonal-maintenance.md`
+- [ ] Roof - estimated remaining life: ___ years (replace at 20-30 years for asphalt)
+- [ ] HVAC - age: ___ years, last serviced: ___ (replace at 15-20 years)
+- [ ] Water heater - age: ___ years (replace proactively at 10-12 years)
 - [ ] Any deferred maintenance to address?
 - [ ] Capital improvements planned for next year?
+
+### Capital Expenditure Reserve
+
+Budget rule of thumb: reserve 1% of property value per year for maintenance and replacements.
+
+| Item | Current Value / Age | Est. Replacement Cost | Est. Years Remaining |
+|------|--------------------|-----------------------|---------------------|
+| Roof | | $ | |
+| HVAC | | $ | |
+| Water heater | | $ | |
+| Appliances | | $ | |
+| Flooring | | $ | |
+| Exterior paint | | $ | |
+
+| Reserve Calculation | Amount |
+|---------------------|--------|
+| Property value | $ |
+| Annual reserve (1%) | $ |
+| Monthly reserve | $ |
+| Current reserve balance | $ |
+| Adequate? | [ ] Yes [ ] No |
+
+For detailed cash flow analysis, see `financials/cash-flow-analysis.md`.
 
 ## Compliance
 
@@ -64,6 +97,17 @@
 - [ ] Any complaints or concerns raised?
 - [ ] Lease expiration date: _______________
 - [ ] Renewal discussion needed? [ ] Yes [ ] No
+
+## Tax Review
+
+- [ ] All expenses properly classified (repair vs. improvement vs. de minimis) in expenses.csv
+- [ ] 1099 candidates identified (contractors paid $600+) - see `financials/tax/[YEAR]/1099-tracking.csv`
+- [ ] W-9 on file for all active contractors
+- [ ] Depreciation schedule current
+- [ ] Mileage/travel logs up to date
+- [ ] CPA consulted on year-end tax planning? [ ] Yes [ ] No [ ] N/A
+
+See `docs/tax-planning.md` for the full tax reference.
 
 ## Action Items
 

@@ -85,11 +85,39 @@ Many states limit how criminal history can be used. Research your state's rules.
 
 - You must allow reasonable modifications to the unit (at tenant's expense for private landlords with fewer than a certain number of units -- check federal and state thresholds)
 - You must allow reasonable accommodations in rules/policies (e.g., reserved parking for mobility issues)
-- Service animals and emotional support animals must be allowed regardless of pet policy
-  - You may NOT charge a pet deposit for service/support animals
-  - You may request documentation from a healthcare provider for support animals
-  - You may NOT ask about the nature of the disability
 - Common reasonable accommodations: reserved parking, grab bars, ramp, different payment schedule
+- Note: Drug and alcohol addiction (not current illegal use) is considered a disability under the ADA. You cannot discriminate based on recovery status.
+
+### Service Animals and Emotional Support Animals (ESA)
+
+This comes up frequently. Follow this process carefully:
+
+**What you MUST do:**
+- Allow service animals and ESAs regardless of your pet policy
+- Allow them regardless of breed, size, or weight restrictions
+- Make no distinction between service animals and ESAs for housing purposes
+
+**What you CANNOT do:**
+- Charge a pet deposit, pet fee, or pet rent for service/support animals
+- Ask about the nature or extent of the person's disability
+- Require the animal to be certified, registered, or wear a vest
+- Deny housing based on the breed or size of the service/support animal
+
+**What you CAN do:**
+- Ask for documentation from a licensed healthcare provider that the person has a disability and needs the animal (for ESAs only - not for trained service animals where the disability is obvious)
+- Require that the animal not pose a direct threat to health or safety (based on objective evidence, not breed stereotypes)
+- Charge for actual damage caused by the animal (same as any tenant-caused damage)
+- Require that the animal be under the handler's control at all times
+
+**Verification approach:** Ask your insurance carrier to note the animal on the policy. This is a practical step that also helps verify legitimacy.
+
+**If you receive an accommodation request:**
+1. Do not deny or delay. Engage in an interactive process.
+2. Request documentation (for ESAs) from a licensed healthcare provider.
+3. Evaluate whether the accommodation is reasonable.
+4. Respond in writing within a reasonable time.
+5. Document the entire process.
+6. If denied (rare - consult attorney first), provide written explanation of why.
 
 ---
 

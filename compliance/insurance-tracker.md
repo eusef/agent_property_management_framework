@@ -63,4 +63,36 @@ Track for cost trend analysis:
 
 ---
 
-*Populate with actual policy data during property onboarding.*
+---
+
+## Coverage Targets and Best Practices
+
+### Recommended Minimum Coverage
+
+| Coverage | Target |
+|----------|--------|
+| Liability per property | $500,000-$1,000,000 per occurrence |
+| Aggregate liability | $2,000,000 |
+| Umbrella policy | $1,000,000+ (costs only a few hundred dollars/year) |
+| Deductible strategy | $2,500-$5,000 per property (higher deductible = lower premiums) |
+| Policy type | **Landlord policy** (NOT homeowner's policy) |
+
+### Policy Structure
+
+Use a **separate policy per property**, not a commercial blanket policy. A claim on one property won't expose the others, and tenants cannot discover your full portfolio through policy records.
+
+### Claims Philosophy
+
+Insurance is for **catastrophic events only**. Never file small claims. Each claim raises premiums and risks policy cancellation. If the repair cost is close to your deductible, pay out of pocket.
+
+### Tenant Renter's Insurance
+
+Require as a lease condition. Verify proof of active policy before handing over keys. Track expiration dates above. If coverage lapses, issue a notice to comply (see `templates/comms/notice-to-comply.md`).
+
+### Negligence Voids Coverage
+
+Failure to maintain the property can void coverage on related claims (ignored roof leaks, faulty wiring, unaddressed mold). Proactive maintenance protects your coverage. See `compliance/seasonal-maintenance.md`.
+
+---
+
+*Populate with actual policy data during property onboarding. Review coverage at each annual property review.*

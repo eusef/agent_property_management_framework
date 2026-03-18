@@ -68,6 +68,14 @@ These are safety/habitability emergencies. Act first, get approval later.
 - Exterior door won't lock
 - Significant roof leak (during rain)
 - Pest infestation (health risk -- e.g., rodents, bedbugs)
+- **Mold discovery:**
+  - Step 1: Identify and stop the moisture source (leak, condensation, ventilation issue)
+  - Step 2: Document with photos immediately
+  - Step 3: Get a professional assessment (do NOT attempt DIY remediation for areas larger than 10 sq ft)
+  - Step 4: Remediate quickly - courts have awarded millions for mold exposure
+  - Step 5: Notify insurance if remediation will be significant
+  - Step 6: Address the root cause (not just the visible mold) to prevent recurrence
+  - **Key:** A $500 mold fix ignored can become $5,000+ in remediation plus legal liability. Act immediately.
 
 ### ROUTINE (schedule within 3-7 days)
 

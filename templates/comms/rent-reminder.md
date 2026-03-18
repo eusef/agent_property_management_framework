@@ -49,8 +49,33 @@ Your rent of $[Amount] for [Month] remains unpaid as of [Today's Date]. A late f
 
 Please remit payment of $[Total with Late Fee] immediately. If I do not receive payment, I may need to begin formal proceedings as required by Oregon law.
 
-If you are experiencing financial hardship, I encourage you to contact 211 (Oregon helpline) for rental assistance resources. I'm also open to discussing a payment plan if you reach out.
+If you are experiencing financial hardship, I encourage you to contact 211 (Oregon helpline) for rental assistance resources. I'm also open to discussing a payment plan if you reach out proactively.
 
 Phil Johnston
 [Phone]
 [Email]
+
+---
+
+## Payment Plan Guidance
+
+If a tenant requests a payment plan, **all arrangements must be in writing**. Use the Payment Plan Agreement template in `templates/forms/payment-plan-agreement.md`. Key rules:
+
+- Never make verbal payment arrangements
+- The signed agreement must include specific amounts and dates
+- If any payment is missed, the entire remaining balance becomes due immediately
+- Do NOT enter into a payment plan if eviction proceedings have already started
+
+## Late Rent Tenant Types
+
+Different situations call for different approaches, but the process (notices, deadlines, fees) stays the same:
+
+| Type | Description | Approach |
+|------|-------------|----------|
+| First-time late | Previously reliable, one missed payment | Friendly but firm. Send all notices on schedule. Offer payment plan if needed. |
+| Chronic late | Pays eventually but always after the grace period | Enforce every late fee. Consider non-renewal at lease end. |
+| Hardship | Lost job, medical issue, temporary situation | Payment plan with signed agreement. Connect to rental assistance. |
+| Avoiding contact | Not responding to calls, texts, or notices | Escalate notices. Serve formal legal notice. Prepare for eviction. |
+| Cannot pay | No realistic path to payment | Cash-for-keys may be faster and cheaper than eviction (see `templates/forms/cash-for-keys-agreement.md`). |
+
+**Remember:** Late fees are never waived. Consistent enforcement protects you legally and prevents tenants from expecting exceptions.

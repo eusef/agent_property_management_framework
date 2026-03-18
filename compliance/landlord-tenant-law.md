@@ -78,6 +78,23 @@ Landlord must maintain:
 
 See compliance/fair-housing.md for full details.
 
+## Lead-Based Paint Disclosure (Federal - Pre-1978 Properties)
+
+**Applies to ALL rental housing built before 1978. This is a federal requirement.**
+
+Before a tenant signs a lease, you must:
+1. Provide the EPA pamphlet "Protect Your Family From Lead in Your Home"
+2. Disclose any known lead-based paint or hazards in the property
+3. Provide any available records or reports about lead-based paint
+4. Include a lead-based paint disclosure form as part of the lease (signed by both parties)
+5. Keep signed acknowledgments for at least 3 years
+
+**Penalties:** Up to $19,507 per violation (HUD/EPA). Treble damages in private lawsuits.
+
+The move-in day checklist (`templates/checklists/move-in-day.md`) includes verification checkboxes for this requirement.
+
+---
+
 ## Local Jurisdictions
 
 Many cities and counties add requirements beyond state law. Research and document any local additions that apply to your properties:

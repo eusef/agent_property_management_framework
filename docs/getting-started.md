@@ -6,10 +6,41 @@
 
 ## Prerequisites
 
+### Technical
 - Git installed on your machine
 - A text editor (VS Code, Sublime, or any markdown editor)
 - An AI assistant (Claude, ChatGPT, etc.) for AI-assisted workflows (optional but recommended)
 - Basic comfort with markdown files and CSV spreadsheets
+
+### Business Setup (Complete Before Your First Tenant)
+
+1. **Set up separate bank accounts**
+   - One **checking account** for all rental income and expenses (never use personal accounts)
+   - One **savings account** for security deposits (required by law in most states - never commingle with operating funds)
+
+2. **Set up a business identity**
+   - Get a dedicated business phone number (Google Voice is free and provides up to 30 numbers with voicemail transcription)
+   - Set up a dedicated business email address (not your personal email)
+   - Get a PO Box or use a registered agent address (never give tenants your home address)
+   - Present yourself as the "Property Manager" rather than the "Landlord" - this creates professional distance and simplifies enforcement
+
+3. **Build your professional team** (at minimum)
+   - Real estate attorney specializing in landlord-tenant law in your state
+   - CPA with specific experience in residential rental property
+   - Insurance agent knowledgeable about landlord policies
+   - See `vendors/README.md` Professional Services section
+
+4. **Get proper insurance**
+   - Landlord policy (NOT homeowner's) on each rental property
+   - Umbrella policy ($1M+ coverage for a few hundred dollars/year)
+   - See `compliance/insurance-tracker.md` for coverage targets
+
+5. **Gather all forms before you need them**
+   - Lease agreement (reviewed by your attorney)
+   - All templates in `templates/` are ready to customize
+   - State-specific forms (see `templates/forms/`)
+
+See `docs/policy-binder.md` for a consolidated reference of all your standing business policies.
 
 ---
 

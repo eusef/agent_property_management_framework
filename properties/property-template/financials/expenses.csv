@@ -1,1 +1,1 @@
-date,category,vendor,amount,description,receipt
+date,vendor,description,amount,category,tax_treatment,receipt

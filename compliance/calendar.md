@@ -40,17 +40,23 @@
 
 ### Annual -- Property Maintenance (Seasonal)
 
+See `compliance/seasonal-maintenance.md` for the full seasonal guide with detailed task descriptions by season.
+
 | Item | Target Month | Property | Notes |
 |------|-------------|----------|-------|
-| Pressure wash (driveway, walkways, siding) | [MONTH] | [PROPERTY_NAME] | Climate-dependent |
-| HVAC tune-up + filter change | [MONTH] | [PROPERTY_NAME] | Before heavy-use season |
-| Exterior inspection/repairs | [MONTH] | [PROPERTY_NAME] | Dry season = best window for exterior work |
-| Roof inspection / moss treatment | [MONTH] | [PROPERTY_NAME] | Before rain/snow season |
-| Smoke/CO detector test + battery replacement | [MONTH] | [PROPERTY_NAME] | [YOUR_STATE] law requirement |
-| Gutter cleaning (fall) | [MONTH] | [PROPERTY_NAME] | Before leaf drop peak |
-| Furnace inspection + filter change | [MONTH] | [PROPERTY_NAME] | Before heating season |
-| Winterize pipes | [MONTH] | [PROPERTY_NAME] | Check before first freeze |
-| Dryer vent cleaning | Any (schedule annually) | [PROPERTY_NAME] | Fire prevention |
+| HVAC A/C servicing | April | [PROPERTY_NAME] | Before cooling season. Replace filters. |
+| Exterior inspection | April | [PROPERTY_NAME] | Walk entire property: siding, foundation, trim, windows. Note winter damage. |
+| Gutter cleaning (spring) | March | [PROPERTY_NAME] | Clear debris from fall/winter. |
+| Test sprinkler system | April | [PROPERTY_NAME] | Check all heads, adjust coverage, check for leaks. |
+| Roof inspection | April | [PROPERTY_NAME] | Missing/damaged shingles, flashing, moss. |
+| Smoke/CO detector test (spring) | April | [PROPERTY_NAME] | Replace batteries. Replace units older than 10 years. |
+| Pressure wash | May | [PROPERTY_NAME] | Driveway, walkways, siding. Climate-dependent. |
+| Dryer vent cleaning | June | [PROPERTY_NAME] | Fire prevention. Professional cleaning recommended. |
+| Furnace inspection + filter change | October | [PROPERTY_NAME] | Before heating season. Check for CO leaks. |
+| Gutter cleaning (fall) | November | [PROPERTY_NAME] | After leaf drop, before rain/snow. Critical. |
+| Winterize outdoor faucets and pipes | November | [PROPERTY_NAME] | Before first freeze. Disconnect hoses, insulate spigots. |
+| Smoke/CO detector test (fall) | October | [PROPERTY_NAME] | Semi-annual. Replace batteries. |
+| Weather stripping inspection | October | [PROPERTY_NAME] | Doors and windows. Replace if deteriorated. |
 
 ### Annual -- Insurance
 

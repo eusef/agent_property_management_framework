@@ -2,7 +2,25 @@
 
 **When to use:** After tenant vacates. Compare each item to the move-in inspection report. Document all damage beyond normal wear and tear.
 **Oregon law note:** Security deposit accounting must be itemized and delivered within 31 days of tenancy end (ORS 90.300). Deductions must be for damage beyond normal wear and tear.
-**Normal wear and tear examples:** Minor scuffs on walls, slight carpet wear in traffic areas, faded paint, minor nail holes. These are NOT deductible.
+---
+
+## Normal Wear and Tear vs. Chargeable Damage Reference
+
+Use this table when assessing each area. When in doubt, err on the side of normal wear - courts tend to favor tenants in ambiguous cases.
+
+| Normal Wear and Tear (NOT Chargeable) | Chargeable Damage |
+|---------------------------------------|-------------------|
+| Small nail holes (picture hanging) | Large holes in walls |
+| Slight carpet wear in traffic areas | Carpet stains, burns, or pet damage |
+| Faded or slightly dirty paint | Crayon, marker, or unauthorized paint colors |
+| Minor scuffs on walls or floors | Gouges, scratches, or dents in flooring |
+| Worn window hardware | Broken windows, torn screens |
+| Loose door handles (normal use) | Broken doors, removed doors |
+| Minor sink staining | Chipped or cracked porcelain |
+| Worn caulking around tub | Mold/mildew from tenant neglect (lack of ventilation) |
+| Faded curtains/blinds | Torn or missing blinds |
+| Slightly dirty (not spotless) | Excessive filth requiring professional cleaning |
+| Worn keys | Missing or unreturned keys |
 
 ---
 
