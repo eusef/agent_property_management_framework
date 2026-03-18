@@ -15,11 +15,11 @@ mkdir -p properties/{property-slug}/tenants
 mkdir -p properties/{property-slug}/inspections
 ```
 
-Example: `properties/123-main-st/`
+Example: `properties/my-rental-property/`
 
 Or run the setup script if available:
 ```bash
-./setup.sh add-property "123 Main St"
+./setup.sh add-property "My Rental Property"
 ```
 
 ---

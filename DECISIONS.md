@@ -45,4 +45,4 @@ All significant decisions are logged here in reverse chronological order (newest
 **Context:** Product definition approved. First deliverable is folder structure creation.
 **Decision:** Created full directory structure with example property, templates, compliance docs, and vendor database.
 **Rationale:** Establishes the data layer foundation so all subsequent work (property onboarding, financial tracking, compliance monitoring) has a home.
-**Impact:** All workflows can now proceed. New properties follow the example-property pattern.
+**Impact:** All workflows can now proceed. New properties follow the property-template pattern.

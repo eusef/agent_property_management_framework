@@ -1,6 +1,6 @@
 # Continuity Plan
 
-**Purpose:** If Test User becomes incapacitated, a successor must be able to take over property management operations within 48 hours. This folder contains everything needed for that transition.
+**Purpose:** If the owner becomes incapacitated, a successor must be able to take over property management operations within 48 hours. This folder contains everything needed for that transition.
 
 ---
 
@@ -18,7 +18,7 @@
 - [ ] USB drive with full repo clone (updated monthly)
 - [ ] Credentials document (sealed envelope or password manager shared with successor)
 - [ ] Legal documents (LLC operating agreement, successor designation, POA)
-- [ ] Letter to successor (personal notes from Test User)
+- [ ] Letter to successor (personal notes from owner)
 
 ---
 

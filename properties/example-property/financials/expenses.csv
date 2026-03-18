@@ -1,5 +1,0 @@
-date,vendor,description,amount,category,tax_treatment,receipt
-2025-09-15,City of Springfield,Water/sewer service Sep 2025,65.00,utility,expense,receipt-2025-09-water
-2025-09-15,Sanipac,Trash service Sep 2025,45.00,utility,expense,receipt-2025-09-trash
-2025-10-12,Valley HVAC,Annual furnace tune-up and filter change,175.00,maintenance,repair,invoice-valley-hvac-2025
-2025-11-20,Springfield Plumbing,Kitchen faucet replacement (leaking),185.00,repair,repair,invoice-springfield-plumb-2025

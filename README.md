@@ -80,11 +80,10 @@ PM_FRAMEWORK/
 │   └── AGENT_SETUP.md        # Working instructions and CSV schemas
 │
 ├── properties/
-│   ├── example-property/     # Fully worked example (123 Main St)
-│   │   ├── README.md         # Property card
-│   │   ├── maintenance-forecast.md
-│   │   └── financials/       # income.csv, expenses.csv, deposits.csv
 │   └── property-template/    # Blank template — copy for new properties
+│       ├── README.md         # Property card template
+│       ├── maintenance-forecast.md
+│       └── financials/       # income.csv, expenses.csv, deposits.csv
 │
 ├── templates/
 │   ├── comms/                # Tenant communication templates (7)
@@ -137,9 +136,9 @@ PM_FRAMEWORK is **tool-agnostic**. The `.pm_agent/AGENT_CONTEXT.md` file serves 
 
 You select your AI tool during setup. Change it anytime in Settings.
 
-## Example Property
+## Getting Started
 
-The repo ships with a fully worked example: **123 Main St, Springfield, OR** — a fictional 3bd/2ba rental at $1,850/month with tenant Jamie Rivera. Use it to understand the structure before setting up your own properties.
+Copy `properties/property-template/` to create your first property. See `docs/adding-a-property.md` for a step-by-step guide.
 
 ## Settings
 

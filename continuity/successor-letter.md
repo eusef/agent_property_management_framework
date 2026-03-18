@@ -1,6 +1,6 @@
 # Letter to Successor
 
-**From:** Test User
+**From:** [Owner Name]
 **Date:** TBD
 **Purpose:** Personal notes for whoever takes over managing these properties. Things that don't fit neatly into templates or spreadsheets.
 

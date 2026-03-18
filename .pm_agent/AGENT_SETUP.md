@@ -85,8 +85,8 @@ Tracks all income (rent, late fees, pet deposits, etc.) per property.
 
 ```
 date,description,amount,category
-2026-01-01,January rent - Jamie Rivera,1850.00,rent
-2026-01-15,Late fee - January,75.00,late_fee
+YYYY-MM-DD,[Tenant] - [Month] rent,[amount],rent
+YYYY-MM-DD,Late fee - [Month],[amount],late_fee
 ```
 
 **Columns:**
@@ -100,9 +100,9 @@ Tracks all expenses per property.
 
 ```
 date,vendor,description,amount,category,tax_treatment,receipt
-2026-02-10,ABC Plumbing,Kitchen faucet repair,185.00,maintenance,repair,receipts/2026-02-10-abc-plumbing.pdf
-2026-03-01,Springfield Water Dept,Water/sewer - March,95.00,utility,expense,receipts/2026-03-01-water.pdf
-2026-03-15,Home Depot,New dishwasher,650.00,capital,improvement,receipts/2026-03-15-dishwasher.pdf
+YYYY-MM-DD,[Vendor],[Description],[amount],maintenance,repair,receipts/YYYY-MM-DD-vendor.pdf
+YYYY-MM-DD,[Utility Co],[Service] - [Month],[amount],utility,expense,receipts/YYYY-MM-DD-utility.pdf
+YYYY-MM-DD,[Store],[Item],[amount],capital,improvement,receipts/YYYY-MM-DD-item.pdf
 ```
 
 **Columns:**
@@ -125,7 +125,7 @@ Tracks security deposits across the portfolio.
 
 ```
 property,tenant,amount,date_received,date_returned,deductions
-123 Main St,Jamie Rivera,1850.00,2024-06-01,,
+[Property Address],[Tenant Name],[amount],YYYY-MM-DD,,
 ```
 
 **Columns:**

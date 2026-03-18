@@ -1,2 +1,0 @@
-tenant,amount_held,account,date_received,interest_owed,date_returned,amount_returned,deductions,notes
-Jamie Rivera,1850.00,Chen Properties Trust - First Interstate Bank,2025-07-28,0.00,,,,Security deposit ($1850) + pet deposit ($500) held separately per Oregon law. Pet deposit tracked under pet_deposit field in lease.

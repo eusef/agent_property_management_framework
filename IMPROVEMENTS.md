@@ -32,7 +32,7 @@ Track system improvements with ROI estimates. Format: estimated build time, esti
 
 - [ ] **IMP-008:** Onboard additional properties using the same framework
   - Build: ~4-6 hrs per property | Saves: ~30 min/mo in management overhead | Payback: 2-3 months
-  - Follow the example-property pattern for each new property
+  - Follow the property-template pattern for each new property
   - Skip tenant/lease/financial sections for personal residences (maintenance tracking only)
 
 ---
